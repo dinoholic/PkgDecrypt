@@ -48,6 +48,14 @@ extern "C" {
 
 typedef off_t off64_t;
 
+#elif __APPLE__
+// macOS code goes here
+#  define off64_t off_t
+#  define fopen64 fopen
+    
+#define PATH_SEPARATOR '/'
+#define PATH_SEPARATOR_STR "/"
+
 #elif _WIN32
 // windows code goes here
 #include <direct.h>
